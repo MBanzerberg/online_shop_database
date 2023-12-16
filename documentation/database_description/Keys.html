@@ -1,0 +1,503 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="keywords" content="TDM_Report">
+        <link rel="stylesheet" type="text/css" media="screen" href="anim.css" title="report">
+        <link rel="stylesheet" type="text/css" media="print" href="anim_NoFrames_print.css" title="report">
+            <script src="tdmShowDetails.js" type="text/javascript"></script>
+        <title>Toad Data Modeler - HTML Report</title>
+    </head>
+
+<body onLoad="getUrlItem()"><div class="mainContainer"><div id="headerContainer"><div id="header"><div class="title1"></div><div class="title2">Keys</div><div class="reportStats">niedziela, 4 grudnia 2022 12:47:28</div><div class="titleimage"><a href="https://www.quest.com/" target="_blank"><img src="Img/logo.png" alt="Made with Toad Data Modeler" border="0" /></a></div><div class="headerEnd"><p>&nbsp;</p></div></div><div id="navTop"><ul><li><a href="MInfo.html">Model Info</a></li><li><a href="MImage.html">ER Diagram</a></li><li><a href="Tables.html">Entities</a></li><li><a href="Columns.html">Attributes</a></li><li><a href="Indexes.html">Indexes</a></li><li class="selLi"><a href="Keys.html" class="selAnchor">Keys</a></li><li><a href="Relations.html">Relationships</a></li><li><a href="Domains.html">Domains</a></li><li><a href="CheckRules.html">Check Constraint Rules</a></li><li><a href="CheckConstraints.html">Check Constraints</a></li><li><a href="Sequences.html">Sequences</a></li></ul><div id="navTopEnd"><p>&nbsp;</p></div></div></div><div id="navCombo"><form name="allItems" action=""><select name="listOfItems" onChange="showSelected()"><option value="Key_{CE03B5F3-685A-43CD-AE56-17CB880FF20C}">PK_&lt;%OwnerName%&gt; (Adresy)</option><option>------------</option><option value="Key_{9D2BEEAC-F2D6-4032-800F-6B0A8A14A81A}">Dostawca_PK (Dostawcy)</option><option>------------</option><option value="Key_{8D58CAF1-156F-46F7-8990-423A1BC8BF70}">PK_&lt;%OwnerName%&gt; (Godziny_otwarc)</option><option>------------</option><option value="Key_{9A291A2D-7C9D-4BA5-BF0B-1BBDC06A0F87}">PK_&lt;%OwnerName%&gt; (Kategorie_prawa_jazdy)</option><option>------------</option><option value="Key_{D527B648-5A3C-4700-8AFF-18434564A4BA}">Klient_PK (Klienci)</option><option>------------</option><option value="Key_{810006D4-66E8-401F-AC49-59955DE4460A}">Unique_Identifier1 (Ksiegowi)</option><option>------------</option><option value="Key_{4ED468DD-4D8A-44ED-924B-C113CA44503D}">Unique_Identifier2 (Magazynierzy)</option><option>------------</option><option value="Key_{E6FE299E-BDEF-412B-BF1F-AD4AA0BD1F98}">Unique_Identifier4 (Magazyny)</option><option>------------</option><option value="Key_{A189BCC4-8081-413F-8595-57CD6F835B93}">Placowka_PK (Placowki)</option><option>------------</option><option value="Key_{F253897E-F13E-44E9-9D6D-06238318BA89}">Key5 (Placowki_Dostawcy)</option><option>------------</option><option value="Key_{F84A182E-D057-4FC4-9A4D-9438F36D2397}">PK_&lt;%OwnerName%&gt; (Pojazdy)</option><option>------------</option><option value="Key_{21C9D49B-89A5-4B83-A10C-8B0F6F1BA1A8}">Pracownik_PK (Pracownicy)</option><option>------------</option><option value="Key_{FB749DA4-8A5F-4831-83E9-01A4F6287B00}">Produkt_PK (Produkty)</option><option>------------</option><option value="Key_{BBD37F72-43D5-4C2D-9479-A894779231D1}">Key1 (Produkty_w_placowkach)</option><option>------------</option><option value="Key_{82A98054-2515-4AE0-A326-61E8A31A6EDD}">PK_&lt;%OwnerName%&gt; (Punkt_obslugi_Godziny_otwarcia)</option><option>------------</option><option value="Key_{91AC6B45-C074-4D83-87DE-45B3A4BB1358}">Unique_Identifier3 (Punkty_obslugi)</option><option>------------</option><option value="Key_{8619BD03-FEAF-4061-8A8C-2D93B7567BEA}">Sklep_PK (Sklepy_Internetowe)</option><option>------------</option><option value="Key_{D7253973-C7AC-4972-85B8-42A80FB2AE11}">PK_&lt;%OwnerName%&gt; (Wlasciciele)</option><option>------------</option><option value="Key_{EE3A8722-95B9-4656-912D-5B9802EC618D}">Zamowienie_PK (Zamowienia)</option><option>------------</option><option value="Key_{8D365E08-C823-46E7-9702-829088213F3A}">Key3 (Zamowienia_Produkty)</option></select></form><div id="navComboEnd"><p></p></div></div><div id="navLeft"><div id="bookmark"><ul><li><a onClick="return showDetail('Key_{CE03B5F3-685A-43CD-AE56-17CB880FF20C}', this)">PK_&lt;%OwnerName%&gt; (Adresy)</a></li><li class="spacerGap"></li><li><a onClick="return showDetail('Key_{9D2BEEAC-F2D6-4032-800F-6B0A8A14A81A}', this)">Dostawca_PK (Dostawcy)</a></li><li class="spacerGap"></li><li><a onClick="return showDetail('Key_{8D58CAF1-156F-46F7-8990-423A1BC8BF70}', this)">PK_&lt;%OwnerName%&gt; (Godziny_otwarc)</a></li><li class="spacerGap"></li><li><a onClick="return showDetail('Key_{9A291A2D-7C9D-4BA5-BF0B-1BBDC06A0F87}', this)">PK_&lt;%OwnerName%&gt; (Kategorie_prawa_jazdy)</a></li><li class="spacerGap"></li><li><a onClick="return showDetail('Key_{D527B648-5A3C-4700-8AFF-18434564A4BA}', this)">Klient_PK (Klienci)</a></li><li class="spacerGap"></li><li><a onClick="return showDetail('Key_{810006D4-66E8-401F-AC49-59955DE4460A}', this)">Unique_Identifier1 (Ksiegowi)</a></li><li class="spacerGap"></li><li><a onClick="return showDetail('Key_{4ED468DD-4D8A-44ED-924B-C113CA44503D}', this)">Unique_Identifier2 (Magazynierzy)</a></li><li class="spacerGap"></li><li><a onClick="return showDetail('Key_{E6FE299E-BDEF-412B-BF1F-AD4AA0BD1F98}', this)">Unique_Identifier4 (Magazyny)</a></li><li class="spacerGap"></li><li><a onClick="return showDetail('Key_{A189BCC4-8081-413F-8595-57CD6F835B93}', this)">Placowka_PK (Placowki)</a></li><li class="spacerGap"></li><li><a onClick="return showDetail('Key_{F253897E-F13E-44E9-9D6D-06238318BA89}', this)">Key5 (Placowki_Dostawcy)</a></li><li class="spacerGap"></li><li><a onClick="return showDetail('Key_{F84A182E-D057-4FC4-9A4D-9438F36D2397}', this)">PK_&lt;%OwnerName%&gt; (Pojazdy)</a></li><li class="spacerGap"></li><li><a onClick="return showDetail('Key_{21C9D49B-89A5-4B83-A10C-8B0F6F1BA1A8}', this)">Pracownik_PK (Pracownicy)</a></li><li class="spacerGap"></li><li><a onClick="return showDetail('Key_{FB749DA4-8A5F-4831-83E9-01A4F6287B00}', this)">Produkt_PK (Produkty)</a></li><li class="spacerGap"></li><li><a onClick="return showDetail('Key_{BBD37F72-43D5-4C2D-9479-A894779231D1}', this)">Key1 (Produkty_w_placowkach)</a></li><li class="spacerGap"></li><li><a onClick="return showDetail('Key_{82A98054-2515-4AE0-A326-61E8A31A6EDD}', this)">PK_&lt;%OwnerName%&gt; (Punkt_obslugi_Godziny_otwarcia)</a></li><li class="spacerGap"></li><li><a onClick="return showDetail('Key_{91AC6B45-C074-4D83-87DE-45B3A4BB1358}', this)">Unique_Identifier3 (Punkty_obslugi)</a></li><li class="spacerGap"></li><li><a onClick="return showDetail('Key_{8619BD03-FEAF-4061-8A8C-2D93B7567BEA}', this)">Sklep_PK (Sklepy_Internetowe)</a></li><li class="spacerGap"></li><li><a onClick="return showDetail('Key_{D7253973-C7AC-4972-85B8-42A80FB2AE11}', this)">PK_&lt;%OwnerName%&gt; (Wlasciciele)</a></li><li class="spacerGap"></li><li><a onClick="return showDetail('Key_{EE3A8722-95B9-4656-912D-5B9802EC618D}', this)">Zamowienie_PK (Zamowienia)</a></li><li class="spacerGap"></li><li><a onClick="return showDetail('Key_{8D365E08-C823-46E7-9702-829088213F3A}', this)">Key3 (Zamowienia_Produkty)</a></li></ul><div id="bookmarkEnd"><p>&nbsp;</p></div></div></div><div class="separator" ></div><div class="container"><div id="content"><div id="Key_{CE03B5F3-685A-43CD-AE56-17CB880FF20C}" class="item">
+<a name = "Key_{CE03B5F3-685A-43CD-AE56-17CB880FF20C}"></a>
+<div class="caption1"><p>PK_&lt;%OwnerName%&gt; (Adresy)</p></div>
+<div class="caption2"><p>General Info</p></div>
+<table class="tabformat" border="0" cellpadding="2" cellspacing="1" width="100%">
+<tr>
+<td class="tabhead" width="23%">Caption</td>
+<td class="tabdata">PK &lt;%OwnerCaption%&gt;</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Entity Name</td>
+<td class="tabdata">Adresy</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Key Type</td>
+<td class="tabdata">Primary Key</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Attribute Names</td>
+<td class="tabdata">Id_adresu</td>
+</tr>
+</table>
+<br>
+<div class="itemEnd"><p>&nbsp;</p></div></div>
+<div id="Key_{9D2BEEAC-F2D6-4032-800F-6B0A8A14A81A}" class="item">
+<a name = "Key_{9D2BEEAC-F2D6-4032-800F-6B0A8A14A81A}"></a>
+<div class="caption1"><p>Dostawca_PK (Dostawcy)</p></div>
+<div class="caption2"><p>General Info</p></div>
+<table class="tabformat" border="0" cellpadding="2" cellspacing="1" width="100%">
+<tr>
+<td class="tabhead" width="23%">Caption</td>
+<td class="tabdata">Dostawca_PK</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Entity Name</td>
+<td class="tabdata">Dostawcy</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Key Type</td>
+<td class="tabdata">Primary Key</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Attribute Names</td>
+<td class="tabdata">Id_dostawcy</td>
+</tr>
+</table>
+<br>
+<div class="itemEnd"><p>&nbsp;</p></div></div>
+<div id="Key_{8D58CAF1-156F-46F7-8990-423A1BC8BF70}" class="item">
+<a name = "Key_{8D58CAF1-156F-46F7-8990-423A1BC8BF70}"></a>
+<div class="caption1"><p>PK_&lt;%OwnerName%&gt; (Godziny_otwarc)</p></div>
+<div class="caption2"><p>General Info</p></div>
+<table class="tabformat" border="0" cellpadding="2" cellspacing="1" width="100%">
+<tr>
+<td class="tabhead" width="23%">Caption</td>
+<td class="tabdata">PK &lt;%OwnerCaption%&gt;</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Entity Name</td>
+<td class="tabdata">Godziny_otwarc</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Key Type</td>
+<td class="tabdata">Primary Key</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Attribute Names</td>
+<td class="tabdata">Id_godzin_otwarcia</td>
+</tr>
+</table>
+<br>
+<div class="itemEnd"><p>&nbsp;</p></div></div>
+<div id="Key_{9A291A2D-7C9D-4BA5-BF0B-1BBDC06A0F87}" class="item">
+<a name = "Key_{9A291A2D-7C9D-4BA5-BF0B-1BBDC06A0F87}"></a>
+<div class="caption1"><p>PK_&lt;%OwnerName%&gt; (Kategorie_prawa_jazdy)</p></div>
+<div class="caption2"><p>General Info</p></div>
+<table class="tabformat" border="0" cellpadding="2" cellspacing="1" width="100%">
+<tr>
+<td class="tabhead" width="23%">Caption</td>
+<td class="tabdata">PK &lt;%OwnerCaption%&gt;</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Entity Name</td>
+<td class="tabdata">Kategorie_prawa_jazdy</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Key Type</td>
+<td class="tabdata">Primary Key</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Attribute Names</td>
+<td class="tabdata">Kategoria</td>
+</tr>
+</table>
+<br>
+<div class="itemEnd"><p>&nbsp;</p></div></div>
+<div id="Key_{D527B648-5A3C-4700-8AFF-18434564A4BA}" class="item">
+<a name = "Key_{D527B648-5A3C-4700-8AFF-18434564A4BA}"></a>
+<div class="caption1"><p>Klient_PK (Klienci)</p></div>
+<div class="caption2"><p>General Info</p></div>
+<table class="tabformat" border="0" cellpadding="2" cellspacing="1" width="100%">
+<tr>
+<td class="tabhead" width="23%">Caption</td>
+<td class="tabdata">Klient_PK</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Entity Name</td>
+<td class="tabdata">Klienci</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Key Type</td>
+<td class="tabdata">Primary Key</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Attribute Names</td>
+<td class="tabdata">Id_klienta</td>
+</tr>
+</table>
+<br>
+<div class="itemEnd"><p>&nbsp;</p></div></div>
+<div id="Key_{810006D4-66E8-401F-AC49-59955DE4460A}" class="item">
+<a name = "Key_{810006D4-66E8-401F-AC49-59955DE4460A}"></a>
+<div class="caption1"><p>Unique_Identifier1 (Ksiegowi)</p></div>
+<div class="caption2"><p>General Info</p></div>
+<table class="tabformat" border="0" cellpadding="2" cellspacing="1" width="100%">
+<tr>
+<td class="tabhead" width="23%">Caption</td>
+<td class="tabdata">Unique_Identifier1</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Entity Name</td>
+<td class="tabdata">Ksiegowi</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Key Type</td>
+<td class="tabdata">Primary Key</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Attribute Names</td>
+<td class="tabdata">Id_pracownika</td>
+</tr>
+</table>
+<br>
+<div class="itemEnd"><p>&nbsp;</p></div></div>
+<div id="Key_{4ED468DD-4D8A-44ED-924B-C113CA44503D}" class="item">
+<a name = "Key_{4ED468DD-4D8A-44ED-924B-C113CA44503D}"></a>
+<div class="caption1"><p>Unique_Identifier2 (Magazynierzy)</p></div>
+<div class="caption2"><p>General Info</p></div>
+<table class="tabformat" border="0" cellpadding="2" cellspacing="1" width="100%">
+<tr>
+<td class="tabhead" width="23%">Caption</td>
+<td class="tabdata">Unique_Identifier2</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Entity Name</td>
+<td class="tabdata">Magazynierzy</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Key Type</td>
+<td class="tabdata">Primary Key</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Attribute Names</td>
+<td class="tabdata">Id_pracownika</td>
+</tr>
+</table>
+<br>
+<div class="itemEnd"><p>&nbsp;</p></div></div>
+<div id="Key_{E6FE299E-BDEF-412B-BF1F-AD4AA0BD1F98}" class="item">
+<a name = "Key_{E6FE299E-BDEF-412B-BF1F-AD4AA0BD1F98}"></a>
+<div class="caption1"><p>Unique_Identifier4 (Magazyny)</p></div>
+<div class="caption2"><p>General Info</p></div>
+<table class="tabformat" border="0" cellpadding="2" cellspacing="1" width="100%">
+<tr>
+<td class="tabhead" width="23%">Caption</td>
+<td class="tabdata">Unique_Identifier4</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Entity Name</td>
+<td class="tabdata">Magazyny</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Key Type</td>
+<td class="tabdata">Primary Key</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Attribute Names</td>
+<td class="tabdata">Id_Placowki</td>
+</tr>
+</table>
+<br>
+<div class="itemEnd"><p>&nbsp;</p></div></div>
+<div id="Key_{A189BCC4-8081-413F-8595-57CD6F835B93}" class="item">
+<a name = "Key_{A189BCC4-8081-413F-8595-57CD6F835B93}"></a>
+<div class="caption1"><p>Placowka_PK (Placowki)</p></div>
+<div class="caption2"><p>General Info</p></div>
+<table class="tabformat" border="0" cellpadding="2" cellspacing="1" width="100%">
+<tr>
+<td class="tabhead" width="23%">Caption</td>
+<td class="tabdata">Placowka_PK</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Entity Name</td>
+<td class="tabdata">Placowki</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Key Type</td>
+<td class="tabdata">Primary Key</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Attribute Names</td>
+<td class="tabdata">Id_Placowki</td>
+</tr>
+</table>
+<br>
+<div class="itemEnd"><p>&nbsp;</p></div></div>
+<div id="Key_{F253897E-F13E-44E9-9D6D-06238318BA89}" class="item">
+<a name = "Key_{F253897E-F13E-44E9-9D6D-06238318BA89}"></a>
+<div class="caption1"><p>Key5 (Placowki_Dostawcy)</p></div>
+<div class="caption2"><p>General Info</p></div>
+<table class="tabformat" border="0" cellpadding="2" cellspacing="1" width="100%">
+<tr>
+<td class="tabhead" width="23%">Caption</td>
+<td class="tabdata">Key6</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Entity Name</td>
+<td class="tabdata">Placowki_Dostawcy</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Key Type</td>
+<td class="tabdata">Primary Key</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Attribute Names</td>
+<td class="tabdata">Id_Placowki, Id_dostawcy</td>
+</tr>
+</table>
+<br>
+<div class="itemEnd"><p>&nbsp;</p></div></div>
+<div id="Key_{F84A182E-D057-4FC4-9A4D-9438F36D2397}" class="item">
+<a name = "Key_{F84A182E-D057-4FC4-9A4D-9438F36D2397}"></a>
+<div class="caption1"><p>PK_&lt;%OwnerName%&gt; (Pojazdy)</p></div>
+<div class="caption2"><p>General Info</p></div>
+<table class="tabformat" border="0" cellpadding="2" cellspacing="1" width="100%">
+<tr>
+<td class="tabhead" width="23%">Caption</td>
+<td class="tabdata">PK &lt;%OwnerCaption%&gt;</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Entity Name</td>
+<td class="tabdata">Pojazdy</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Key Type</td>
+<td class="tabdata">Primary Key</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Attribute Names</td>
+<td class="tabdata">Id_pojazdu</td>
+</tr>
+</table>
+<br>
+<div class="itemEnd"><p>&nbsp;</p></div></div>
+<div id="Key_{21C9D49B-89A5-4B83-A10C-8B0F6F1BA1A8}" class="item">
+<a name = "Key_{21C9D49B-89A5-4B83-A10C-8B0F6F1BA1A8}"></a>
+<div class="caption1"><p>Pracownik_PK (Pracownicy)</p></div>
+<div class="caption2"><p>General Info</p></div>
+<table class="tabformat" border="0" cellpadding="2" cellspacing="1" width="100%">
+<tr>
+<td class="tabhead" width="23%">Caption</td>
+<td class="tabdata">Pracownik_PK</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Entity Name</td>
+<td class="tabdata">Pracownicy</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Key Type</td>
+<td class="tabdata">Primary Key</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Attribute Names</td>
+<td class="tabdata">Id_pracownika</td>
+</tr>
+</table>
+<br>
+<div class="itemEnd"><p>&nbsp;</p></div></div>
+<div id="Key_{FB749DA4-8A5F-4831-83E9-01A4F6287B00}" class="item">
+<a name = "Key_{FB749DA4-8A5F-4831-83E9-01A4F6287B00}"></a>
+<div class="caption1"><p>Produkt_PK (Produkty)</p></div>
+<div class="caption2"><p>General Info</p></div>
+<table class="tabformat" border="0" cellpadding="2" cellspacing="1" width="100%">
+<tr>
+<td class="tabhead" width="23%">Caption</td>
+<td class="tabdata">Produkt_PK</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Entity Name</td>
+<td class="tabdata">Produkty</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Key Type</td>
+<td class="tabdata">Primary Key</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Attribute Names</td>
+<td class="tabdata">Id_produktu</td>
+</tr>
+</table>
+<br>
+<div class="itemEnd"><p>&nbsp;</p></div></div>
+<div id="Key_{BBD37F72-43D5-4C2D-9479-A894779231D1}" class="item">
+<a name = "Key_{BBD37F72-43D5-4C2D-9479-A894779231D1}"></a>
+<div class="caption1"><p>Key1 (Produkty_w_placowkach)</p></div>
+<div class="caption2"><p>General Info</p></div>
+<table class="tabformat" border="0" cellpadding="2" cellspacing="1" width="100%">
+<tr>
+<td class="tabhead" width="23%">Caption</td>
+<td class="tabdata">Key2</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Entity Name</td>
+<td class="tabdata">Produkty_w_placowkach</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Key Type</td>
+<td class="tabdata">Primary Key</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Attribute Names</td>
+<td class="tabdata">Id_produktu, Id_Placowki</td>
+</tr>
+</table>
+<br>
+<div class="itemEnd"><p>&nbsp;</p></div></div>
+<div id="Key_{82A98054-2515-4AE0-A326-61E8A31A6EDD}" class="item">
+<a name = "Key_{82A98054-2515-4AE0-A326-61E8A31A6EDD}"></a>
+<div class="caption1"><p>PK_&lt;%OwnerName%&gt; (Punkt_obslugi_Godziny_otwarcia)</p></div>
+<div class="caption2"><p>General Info</p></div>
+<table class="tabformat" border="0" cellpadding="2" cellspacing="1" width="100%">
+<tr>
+<td class="tabhead" width="23%">Caption</td>
+<td class="tabdata">PK &lt;%OwnerCaption%&gt;</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Entity Name</td>
+<td class="tabdata">Punkt_obslugi_Godziny_otwarcia</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Key Type</td>
+<td class="tabdata">Primary Key</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Attribute Names</td>
+<td class="tabdata">Id_Placowki, Id_godzin_otwarcia</td>
+</tr>
+</table>
+<br>
+<div class="itemEnd"><p>&nbsp;</p></div></div>
+<div id="Key_{91AC6B45-C074-4D83-87DE-45B3A4BB1358}" class="item">
+<a name = "Key_{91AC6B45-C074-4D83-87DE-45B3A4BB1358}"></a>
+<div class="caption1"><p>Unique_Identifier3 (Punkty_obslugi)</p></div>
+<div class="caption2"><p>General Info</p></div>
+<table class="tabformat" border="0" cellpadding="2" cellspacing="1" width="100%">
+<tr>
+<td class="tabhead" width="23%">Caption</td>
+<td class="tabdata">Unique_Identifier3</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Entity Name</td>
+<td class="tabdata">Punkty_obslugi</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Key Type</td>
+<td class="tabdata">Primary Key</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Attribute Names</td>
+<td class="tabdata">Id_Placowki</td>
+</tr>
+</table>
+<br>
+<div class="itemEnd"><p>&nbsp;</p></div></div>
+<div id="Key_{8619BD03-FEAF-4061-8A8C-2D93B7567BEA}" class="item">
+<a name = "Key_{8619BD03-FEAF-4061-8A8C-2D93B7567BEA}"></a>
+<div class="caption1"><p>Sklep_PK (Sklepy_Internetowe)</p></div>
+<div class="caption2"><p>General Info</p></div>
+<table class="tabformat" border="0" cellpadding="2" cellspacing="1" width="100%">
+<tr>
+<td class="tabhead" width="23%">Caption</td>
+<td class="tabdata">Sklep_PK</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Entity Name</td>
+<td class="tabdata">Sklepy_Internetowe</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Key Type</td>
+<td class="tabdata">Primary Key</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Attribute Names</td>
+<td class="tabdata">Id_sklepu</td>
+</tr>
+</table>
+<br>
+<div class="caption2"><p>Key Properties</p></div>
+<table class="tabformat" border="0" cellpadding="2" cellspacing="1" width="100%">
+<tr>
+<td class="tabhead" width="20%">Using Index Properties</td>
+<td class="tabdata" width="80%">Definiuje unikatowy klucz Sklepu</td>
+</tr>
+</table>
+<br>
+<div class="itemEnd"><p>&nbsp;</p></div></div>
+<div id="Key_{D7253973-C7AC-4972-85B8-42A80FB2AE11}" class="item">
+<a name = "Key_{D7253973-C7AC-4972-85B8-42A80FB2AE11}"></a>
+<div class="caption1"><p>PK_&lt;%OwnerName%&gt; (Wlasciciele)</p></div>
+<div class="caption2"><p>General Info</p></div>
+<table class="tabformat" border="0" cellpadding="2" cellspacing="1" width="100%">
+<tr>
+<td class="tabhead" width="23%">Caption</td>
+<td class="tabdata">PK &lt;%OwnerCaption%&gt;</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Entity Name</td>
+<td class="tabdata">Wlasciciele</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Key Type</td>
+<td class="tabdata">Primary Key</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Attribute Names</td>
+<td class="tabdata">Id_Wlasciciela</td>
+</tr>
+</table>
+<br>
+<div class="itemEnd"><p>&nbsp;</p></div></div>
+<div id="Key_{EE3A8722-95B9-4656-912D-5B9802EC618D}" class="item">
+<a name = "Key_{EE3A8722-95B9-4656-912D-5B9802EC618D}"></a>
+<div class="caption1"><p>Zamowienie_PK (Zamowienia)</p></div>
+<div class="caption2"><p>General Info</p></div>
+<table class="tabformat" border="0" cellpadding="2" cellspacing="1" width="100%">
+<tr>
+<td class="tabhead" width="23%">Caption</td>
+<td class="tabdata">Zamowienie_PK</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Entity Name</td>
+<td class="tabdata">Zamowienia</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Key Type</td>
+<td class="tabdata">Primary Key</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Attribute Names</td>
+<td class="tabdata">Id_zamowienia</td>
+</tr>
+</table>
+<br>
+<div class="itemEnd"><p>&nbsp;</p></div></div>
+<div id="Key_{8D365E08-C823-46E7-9702-829088213F3A}" class="item">
+<a name = "Key_{8D365E08-C823-46E7-9702-829088213F3A}"></a>
+<div class="caption1"><p>Key3 (Zamowienia_Produkty)</p></div>
+<div class="caption2"><p>General Info</p></div>
+<table class="tabformat" border="0" cellpadding="2" cellspacing="1" width="100%">
+<tr>
+<td class="tabhead" width="23%">Caption</td>
+<td class="tabdata">Key4</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Entity Name</td>
+<td class="tabdata">Zamowienia_Produkty</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Key Type</td>
+<td class="tabdata">Primary Key</td>
+</tr>
+<tr>
+<td class="tabhead" width="23%">Attribute Names</td>
+<td class="tabdata">Id_zamowienia, Id_produktu</td>
+</tr>
+</table>
+<br>
+<div class="itemEnd"><p>&nbsp;</p></div></div>
+</div><div id="footer"><div class="pageFooter">Copyright &copy; Sitename 2005</div><div class="footerEnd"><p></p></div></div></div></div></body></html>
