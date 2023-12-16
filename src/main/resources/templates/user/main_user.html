@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Main User Page</title>
+
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{/css/style.css}"/>
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top shadow-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="/">uTech</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/main_user">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <form method="post" th:action="@{/index}">
+                    <button class="btn btn-primary"  onclick="successfullyLogout()" value="Sign Out">Logout</button>
+                </form>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5 shadow border-2 mb-5 p-5 bg-light">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10 text-center">
+            <h1 style="font-size:30px" th:inline="text">Welcome <a
+                    style="color:lightskyblue; text-transform:capitalize"><b>[[${#httpServletRequest.remoteUser}]]</b></a>
+                !</h1>
+
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-1"></div>
+        <div class="col-10 text-center"><h3>Your products here</h3></div>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10 mr-auto ml-auto">
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <!--<th scope="col">ID PRODUKTU</th>-->
+                    <th scope="col">NAZWA</th>
+                    <th scope="col">CENA</th>
+                    <th scope="col">SPECYFIKACJA</th>
+                    <th scope="col">OPIS</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each = "product : ${productList2}">
+                    <!--<td th:text = "${product.ID_PRODUKTU}"></td>-->
+                    <td th:text = "${product.NAZWA}"></td>
+                    <td th:text = "${product.CENA}"></td>
+                    <td th:text = "${product.SPECYFIKACJA}"></td>
+                    <td th:text = "${product.OPIS}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/script.js}"></script>
+
+</body>
+</html>

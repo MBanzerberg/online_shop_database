@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Shop Information</title>
+
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{/css/style.css}"/>
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top shadow-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="/">uTech</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/main_admin">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/addresses">Addresses
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/employees">Employees
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/clients">Clients Information
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/products">Products Information
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/shop_information">Company Information
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <form method="post" th:action="@{/index}">
+                    <button class="btn btn-primary"  onclick="successfullyLogout()" value="Sign Out">Logout</button>
+                </form>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-8 bg-light shadow border-2 p-5">
+            <h1 class="mr-auto ml-auto">COMPANY INFORMATION</h1>
+            <br/>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>DATE</th>
+                    <th>WWW ADDRESS</th>
+                    <th>ACTIONS</th>
+                    <!--<th>Edit</th>-->
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each = "shopInformation : ${shopInformationList}">
+                    <td th:text = "${shopInformation.ID_SKLEPU}"></td>
+                    <td th:text = "${shopInformation.NAZWA}"></td>
+                    <td th:text = "${shopInformation.DATA}"></td>
+                    <td th:text = "${shopInformation.ADRES_SKLEPU_WWW}"></td>
+                    <td><a th:href="@{'/shop_address/'+${shopInformation.ID_ADRESU}}" class="float-left"><img src="images/icons/main_admin/home.png" class="icon-height-2"></a>
+                    <a th:href="@{'/edit_shop_information/'+${shopInformation.ID_SKLEPU}}" class="float-right"><img src="images/icons/address/edit.png" class="icon-height-2"></a></td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/script.js}"></script>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Clients</title>
+
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{/css/style.css}"/>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top shadow-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="/">uTech</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/main_admin">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/addresses">Addresses
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/employees">Employees
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/clients">Clients Information
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/products">Products Information
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/shop_information">Company Information
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <form method="post" th:action="@{/index}">
+                    <button class="btn btn-primary"  onclick="successfullyLogout()" value="Sign Out">Logout</button>
+                </form>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5 mb-5 shadow border-2 bg-light p-5">
+    <div class="col-12">
+        <row>
+            <h1>Clients</h1>
+        </row>
+    </div>
+    <div class="col-12">
+        <div class="row">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">FIRST NAME</th>
+                    <th scope="col">LAST NAME</th>
+                    <th scope="col">EMAIL</th>
+                    <th scope="col">PHONE NUMBER</th>
+                    <th scope="col">SEX</th>
+                    <th scope="col">ACTIONS</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each = "client : ${clientList}">
+                    <td th:text = "${client.ID_KLIENTA}"></td>
+                    <td th:text = "${client.IMIE}"></td>
+                    <td th:text = "${client.NAZWISKO}"></td>
+                    <td th:text = "${client.EMAIL}"></td>
+                    <td th:text = "${client.NR_TELEFONU}"></td>
+                    <td th:text = "${client.PLEC}"></td>
+                    <td><a th:href="@{'/edit_employee/'+${client.ID_ADRESU}}">Adres</a></td>
+                    <td><a th:href="@{'/edit_employee/'+${client.ID_KLIENTA}}">Edit</a></br>
+                        <a th:href="@{'/delete_employee/'+${client.ID_KLIENTA}}">Delete</a></td>
+
+                </tr>
+
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="col-12">
+                </div>
+
+                <script type="text/javascript">
+                    // Pobieramy wszystkie elementy div z klasą "date"
+                    var dateDivs = document.getElementsByClassName("datetimepicker44");
+
+                    // Iterujemy przez każdy element
+                    for(var i=0; i < dateDivs.length; i++){
+                        //pobieramy wartość z div
+                        var dateValue = dateDivs[i].innerHTML;
+                        //odrzucamy godzinę
+                        var newDate = dateValue.split(" ")[0];
+                        //ustawiamy nową wartość w divie
+                        dateDivs[i].textContent = newDate;
+                    }
+
+
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

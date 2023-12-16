@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{/css/style.css}"/>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top shadow-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="/">uTech</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/main_admin">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/addresses">Addresses
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/employees">Employees
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/clients">Clients Information
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/products">Products Information
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/shop_information">Company Information
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <form method="post" th:action="@{/index}">
+                    <button class="btn btn-primary"  onclick="successfullyLogout()" value="Sign Out">Logout</button>
+                </form>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5 shadow border-2 mb-5 bg-light p-5">
+    <div class="row">
+        <div class="col-12">
+            <h1>Employees</h1>
+            <a href="/new_employee"><button type="button" class="btn btn-primary">Add Employee</button></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                <tr>
+                    <!--<th scope="col">ID PRACOWNIKA</th>-->
+                    <th scope="col">FIRST NAME</th>
+                    <!--<th scope="col">DRUGIE IMIE</th>-->
+                    <th scope="col">LAST NAME</th>
+                    <!--<th scope="col">DATA URODZENIA</th>-->
+                    <!--<th scope="col">PLEC</th>-->
+                    <!--<th scope="col">PESEL</th>-->
+                    <th scope="col">PHONE NUMBER</th>
+                    <th scope="col">EMAIL</th>
+                    <!--<th scope="col">WYKSZTALCENIE</th>-->
+                    <th scope="col">DATE OF EMPLOYMENT</th>
+                    <th scope="col">POSITION</th>
+                    <th scope="col">SALARY</th>
+                    <!--<th scope="col">PLACOWKA</th>-->
+                    <!--<th scope="col">SKLEP</th>
+                    <th scope="col">ADRES</th>-->
+                    <th scope="col">ACTIONS</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each = "employee : ${employeeList}">
+                    <!--<td th:text = "${employee.ID_PRACOWNIKA}"></td>-->
+                    <td th:text = "${employee.IMIE}"></td>
+                    <!--<td th:text = "${employee.DRUGIE_IMIE}"></td>-->
+                    <td th:text = "${employee.NAZWISKO}"></td>
+                    <!--<td th:text = "${employee.DATA_URODZENIA}" class="datetimepicker44"></td>-->
+                    <!--<td th:text = "${employee.PLEC}"></td>-->
+                    <!--<td th:text = "${employee.PESEL}"></td>-->
+                    <td th:text = "${employee.NR_TELEFONU}"></td>
+                    <td th:text = "${employee.EMAIL}"></td>
+                    <!--<td th:text = "${employee.WYKSZTALCENIE}"></td>-->
+                    <td th:text = "${employee.DATA_ZATRUDNIENIA}" class="datetimepicker44"></td>
+                    <td th:text = "${employee.STANOWISKO}"></td>
+                    <td th:text = "${employee.WYNAGRODZENIE}"></td>
+                    <!--<td th:text = "${employee.ID_PLACOWKI}"></td>-->
+                    <td class="p-2"><a th:href="@{'/show_shop_information/'+${employee.ID_SKLEPU}}"><img src="images/icons/main_admin/shop.png" class="icon-height-3"></a>
+                    <a th:href="@{'/employee_address/'+${employee.ID_ADRESU}}"><img src="images/icons/main_admin/home.png" class="icon-height-3"></a>
+                    <a th:href="@{'/edit_employee/'+${employee.ID_PRACOWNIKA}}"><img src="images/icons/address/edit.png" class="icon-height-3"></a></br>
+                    <a th:href="@{'/delete_employee/'+${employee.ID_PRACOWNIKA}}"><img src="images/icons/address/remove.png" class="icon-height-3"></a></td>
+
+
+                </tr>
+
+                </tbody>
+            </table>
+        <div class="row">
+    <div class="col-12">
+</div>
+
+            <script type="text/javascript">
+                // Pobieramy wszystkie elementy div z klasą "date"
+                var dateDivs = document.getElementsByClassName("datetimepicker44");
+
+                // Iterujemy przez każdy element
+                for(var i=0; i < dateDivs.length; i++){
+                    //pobieramy wartość z div
+                    var dateValue = dateDivs[i].innerHTML;
+                    //odrzucamy godzinę
+                    var newDate = dateValue.split(" ")[0];
+                    //ustawiamy nową wartość w divie
+                    dateDivs[i].textContent = newDate;
+                }
+
+
+            </script>
+        </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

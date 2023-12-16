@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{/css/style.css}"/>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top shadow-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="/">uTech</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/main_admin">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/addresses">Addresses
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/employees">Employees
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/clients">Clients Information
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/products">Products Information
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/shop_information">Company Information
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <form method="post" th:action="@{/index}">
+                    <button class="btn btn-primary"  onclick="successfullyLogout()" value="Sign Out">Logout</button>
+                </form>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5 mb-5">
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 shadow border-2 p-5 bg-light">
+    <h1>Enter new prduct</h1>
+    <br/>
+    <form action="#" th:action="@{/save_product}" th:object="${product}" method="post">
+        <table class="table">
+            <tr>
+                <td>NAZWA:</td>
+                <td><input type="text" th:field="*{NAZWA}"></td>
+            </tr>
+            <tr>
+                <td>CENA:</td>
+                <td><input type="text" th:field="*{CENA}"></td>
+            </tr>
+            <tr>
+                <td>SPECYFIKACJA:</td>
+                <td><input type="text" th:field="*{SPECYFIKACJA}"></td>
+            </tr>
+            <tr>
+                <td>OPIS:</td>
+                <td><input type="text" th:field="*{OPIS}"></td>
+            </tr>
+            <tr>
+                <td>ID_SKLEPU:</td>
+                <td><input type="text" th:field="*{ID_SKLEPU}"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button class="btn btn-primary float-right" type="submit">Save</button></td>
+            </tr>
+        </table>
+
+    </form>
+    </div>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Clients</title>
+
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">uTech</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/main_user">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/bag">Your Bag
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/user_information">Your Account
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="col-12">
+        <row>
+            <h1>Clients</h1>
+        </row>
+    </div>
+    <div class="col-12">
+        <div class="row">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">ID KLIENTA</th>
+                    <th scope="col">IMIE</th>
+                    <th scope="col">NAZWISKO</th>
+                    <th scope="col">EMAIL</th>
+                    <th scope="col">NR_TELEFONU</th>
+                    <th scope="col">PLEC</th>
+                    <th scope="col">ID_SKLEPU</th>
+                    <th scope="col">ID_ADRESU</th>
+                    <th scope="col">Zobacz informacje o kluczach obcych</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each = "user : ${userList}">
+                    <td th:text = "${user.ID_KLIENTA}"></td>
+                    <td th:text = "${user.IMIE}"></td>
+                    <td th:text = "${user.NAZWISKO}"></td>
+                    <td th:text = "${user.EMAIL}"></td>
+                    <td th:text = "${user.NR_TELEFONU}"></td>
+                    <td th:text = "${user.PLEC}"></td>
+                    <td><a th:href="@{'/edit_employee/'+${user.ID_KLIENTA}}">Edit</a></td>
+                </tr>
+
+                </tbody>
+            </table>
+            <div class="row">
+                <div class="col-12">
+                </div>
+
+                <script type="text/javascript">
+                    // Pobieramy wszystkie elementy div z klasą "date"
+                    var dateDivs = document.getElementsByClassName("datetimepicker44");
+
+                    // Iterujemy przez każdy element
+                    for(var i=0; i < dateDivs.length; i++){
+                        //pobieramy wartość z div
+                        var dateValue = dateDivs[i].innerHTML;
+                        //odrzucamy godzinę
+                        var newDate = dateValue.split(" ")[0];
+                        //ustawiamy nową wartość w divie
+                        dateDivs[i].textContent = newDate;
+                    }
+
+
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

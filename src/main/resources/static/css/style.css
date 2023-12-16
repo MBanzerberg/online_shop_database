@@ -1,0 +1,55 @@
+body{
+    background-image: url("../images/backgrounds/main.webp");
+    /*background-color: turquoise;*/
+    background-size: 100px;
+    background-repeat: repeat;
+}
+
+.logo_image{
+    height: 20px;
+    margin: 10px;
+}
+
+.opacity-95{
+    opacity: 0.90;
+}
+
+.star{
+    height: 30px;
+}
+
+.bg-dark{
+    background-color: #2c4f6b!important;
+}
+
+.btn-primary{
+    background-color: #3e4f5c!important;
+}
+
+.border-2{
+    border: #2c4f6b!important;
+    border-width: 2px!important;
+    border-style: solid!important;
+}
+
+.icon-height{
+    height: 25px;
+}
+
+.icon-height-2{
+    height: 20px;
+}
+
+.shadow{
+    box-shadow: 10px 10px 5px #888888!important;
+}
+
+.shadow-navbar{
+    box-shadow: 2px 2px 2px #888888!important;
+}
+
+.icon-height-3{
+    width: 20px;
+    float: left;
+}
+

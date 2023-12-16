@@ -1,0 +1,9 @@
+1. Sprawdzić czy da się edytować dany atrybut bez pokazywania użytkownikowi ID
+2. Ogarnąć dodawanie atrybutów kluczy obcych
+3. Ogarnąć konto usera
+4. Zrobić okienko potwierdzenia czy użytkownik chce usunąć atrybut
+5. Poprawić przycisk wylogowywania
+
+Pomysł: Nawalić dużo plików html, które będą odpowiednio przekierowywały
+
+6.Zrobić oddzielne pola dla roku, miesiąca i dnia

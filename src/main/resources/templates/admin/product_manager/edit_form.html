@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit product</title>
+
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">uTech</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/main_admin">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/addresses">Addresses
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/employees">Employees
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/clients">Clients Information
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/products">Products Information
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/shop_information">Company Information
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <form method="post" th:action="@{/index}">
+                    <button class="btn btn-primary"  onclick="successfullyLogout()" value="Sign Out">Logout</button>
+                </form>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<div align="center">
+
+    <h1>Edit Product</h1>
+    <br/>
+    <form action="#" th:action="@{/update_product}" th:object="${product}" method="post">
+        <table border="1" cellpadding="10">
+            <tr>
+                <td>ID:</td>
+                <td><input type="text" th:field="*{ID_PRODUKTU}" readonly="readonly"></td>
+            </tr>
+            <tr>
+                <td>City:</td>
+                <td><input type="text" th:field="*{NAZWA}"></td>
+            </tr>
+            <tr>
+                <td>Post code:</td>
+                <td><input type="text" th:field="*{CENA}"></td>
+            </tr>
+            <tr>
+                <td>Street:</td>
+                <td><input type="text" th:field="*{SPECYFIKACJA}"></td>
+            </tr>
+            <tr>
+                <td>house number:</td>
+                <td><input type="text" th:field="*{OPIS}"></td>
+            </tr>
+            <tr>
+                <td>apartment number:</td>
+                <td><input type="text" th:field="*{ID_SKLEPU}"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="submit">Save</button></td>
+            </tr>
+        </table>
+
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Main User Page</title>
+
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{/css/style.css}"/>
+
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top shadow-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="/">uTech</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/main_admin">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/addresses">Addresses
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/employees">Employees
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/clients">Clients Information
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/products">Products Information
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/shop_information">Company Information
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <form method="post" th:action="@{/index}">
+                    <button class="btn btn-primary"  onclick="successfullyLogout()" value="Sign Out">Logout</button>
+                </form>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5 shadow border-2 mb-5 bg-light p-5">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <h1 class="mr-auto ml-auto">Products</h1>
+            <a class="mr-auto ml-auto" href="/new_product"><button class="btn btn-primary">Add Product</button></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-10 mr-auto ml-auto">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">NAME</th>
+                    <th scope="col">PRICE</th>
+                    <th scope="col">SPECIFICATION</th>
+                    <th scope="col">DESCRIPTION</th>
+                    <th scope="col">ACTIONS</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each = "product : ${productList}">
+                    <td th:text = "${product.ID_PRODUKTU}"></td>
+                    <td th:text = "${product.NAZWA}"></td>
+                    <td th:text = "${product.CENA}"></td>
+                    <td th:text = "${product.SPECYFIKACJA}"></td>
+                    <td th:text = "${product.OPIS}"></td>
+
+                    <td><a th:href="@{'/edit_product/'+${product.ID_PRODUKTU}}"><img src="images/icons/address/edit.png" class="icon-height-3 float-left"></a>
+                        <a th:href="@{'/delete_product/'+${product.ID_PRODUKTU}}"><img src="images/icons/address/remove.png" class="icon-height-3 float-right"></a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/script.js}"></script>
+
+</body>
+</html>

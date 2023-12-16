@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css} "/>
+    <link th:rel="stylesheet" th:href="@{/css/style.css}"/>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top shadow-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="/">uTech</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/main_admin">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="/addresses">Addresses
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/employees">Employees
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/clients">Clients Information
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/products">Products Information
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/shop_information">Company Information
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <form method="post" th:action="@{/index}">
+                    <button class="btn btn-primary"  onclick="successfullyLogout()" value="Sign Out">Logout</button>
+                </form>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5 mb-5">
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 border-2 shadow bg-light">
+            <h1>Enter new Employee</h1>
+            <br/>
+            <form action="#" th:action="@{/save_employee}" th:object="${employee}" method="post">
+                <table class="table">
+                    <tr>
+                        <td>IMIE:</td>
+                        <td><input type="text" th:field="*{IMIE}"></td>
+                    </tr>
+                    <tr>
+                        <td>DRUGIE IMIE:</td>
+                        <td><input type="text" th:field="*{DRUGIE_IMIE}"></td>
+                    </tr>
+                    <tr>
+                        <td>NAZWISKO:</td>
+                        <td><input type="text" th:field="*{NAZWISKO}"></td>
+                    </tr>
+                    <tr>
+                        <td>DATA URODZENIA(yyyy-mm-dd):</td>
+                        <td><input type="text" th:field="*{DATA_URODZENIA}"></td>
+                    </tr>
+                    <tr>
+                        <td>PLEC:</td>
+                        <td><input type="text" th:field="*{PLEC}"></td>
+                    </tr>
+                    <tr>
+                        <td>PESEL:</td>
+                        <td><input type="text" th:field="*{PESEL}"></td>
+                    </tr>
+                    <tr>
+                        <td>TELEFON:</td>
+                        <td><input type="text" th:field="*{NR_TELEFONU}"></td>
+                    </tr>
+                    <tr>
+                        <td>EMAIL:</td>
+                        <td><input type="text" th:field="*{EMAIL}"></td>
+                    </tr>
+                    <tr>
+                        <td>WYKSZTALCENIE:</td>
+                        <td><input type="text" th:field="*{WYKSZTALCENIE}"></td>
+                    </tr>
+                    <tr>
+                        <td>DATA ZATRUDNIENIA(yyyy-mm-dd):</td>
+                        <td><input type="text" th:field="*{DATA_ZATRUDNIENIA}"></td>
+                    </tr>
+                    <tr>
+                        <td>STANOWISKO:</td>
+                        <td><input type="text" th:field="*{STANOWISKO}"></td>
+                    </tr>
+                    <tr>
+                        <td>WYNAGRODZENIE:</td>
+                        <td><input type="text" th:field="*{WYNAGRODZENIE}"></td>
+                    </tr>
+                    <tr>
+                        <td>ID SKLEPU:</td>
+                        <td><input type="text" th:field="*{ID_SKLEPU}"></td>
+                    </tr>
+                    <tr>
+                        <td>ID PLACOWKI:</td>
+                        <td><input type="text" th:field="*{ID_PLACOWKI}"></td>
+                    </tr>
+                    <tr>
+                        <td>ID ADRESU:</td>
+                        <td><input type="text" th:field="*{ID_ADRESU}"></td>
+                    </tr>
+                    <tr>
+                        <td>Zobacz Listę Adresow:</td>
+                        <td><a th:href="@{'/choose_address/'}"><button class="btn btn-primary mr-auto ml-auto" style="width: 95%;" type="submit">Adresy</button></a></td>
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="2"><button class="btn btn-primary float-right" type="submit">Save</button></td>
+                    </tr>
+                </table>
+
+
+            </form>
+    </div>
+        </div>
+</div>
+</body>
+</html>
